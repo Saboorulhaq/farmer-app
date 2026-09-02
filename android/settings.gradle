@@ -1,0 +1,9 @@
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'FaureeGhanaRN'
+include ':app'
+// Explicitly map vision-camera-cropper to the correct node_modules path
+include ':vision-camera-cropper'
+project(':vision-camera-cropper').projectDir = new File('../node_modules/vision-camera-cropper/android')
+includeBuild('../node_modules/@react-native/gradle-plugin')

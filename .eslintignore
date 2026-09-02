@@ -1,0 +1,14 @@
+# Ignore config and tooling files that should not be linted
+babel.config.js
+.eslintrc.js
+metro.config.js
+jest.config.js
+react-native.config.js
+*.config.js
+*.config.cjs
+
+# Platform/build/vendor
+node_modules/
+android/
+ios/
+vendor/

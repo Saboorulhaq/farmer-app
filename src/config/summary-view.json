@@ -1,0 +1,44 @@
+{
+    "data": {
+        "id": "f3d89863-0ba5-4b84-ab9b-819abbcc4b5b",
+        "type": "product_submission_summary",
+        "attributes": {
+            "submission_id": "f3d89863-0ba5-4b84-ab9b-819abbcc4b5b",
+            "status": "submitted",
+            "submitted_at": null,
+            "facility_details": {
+                "loan_amount": 6000,
+                "facility_type": "Cash Credit",
+                "tenure": "6 Months",
+                "intended_purpose": [
+                    "purchase_seeds"
+                ],
+                "intended_purpose_description": null,
+                "linked_to_fsa": false
+            },
+            "personal_details": {
+                "residence_type": null,
+                "gps_address": null,
+                "cooperative_membership": null
+            },
+            "farm_details": {
+                "farms": [
+                    {
+                        "farm_id": "e3645c3d-7558-472f-837b-76caab7230ce"
+                    }
+                ],
+                "can_add_farm": false
+            },
+            "harvest_details": {
+                "crop_financed": "onion",
+                "expected_volume": 32,
+                "unit": "kg",
+                "expected_price": null,
+                "borrowing_information": null
+            },
+            "is_readonly": true,
+            "product_slug": "cash-credit",
+            "product_name": "Cash Credit"
+        }
+    }
+}

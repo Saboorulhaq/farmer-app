@@ -1,0 +1,2075 @@
+{
+  "data": {
+    "id": "2b34ec1f-c32e-4845-b64f-39d6d092036f",
+    "type": "product_submission",
+    "attributes": {
+      "id": "2b34ec1f-c32e-4845-b64f-39d6d092036f",
+      "farmer_uuid": "25d61383-a766-4ad0-9920-77cb4f57082a",
+      "product_id": "b504467a-1b85-4f1e-b0d3-d881a6eb4663",
+      "status": "pending_otp_verification",
+      "product_configuration": {
+        "product_id": "b504467a-1b85-4f1e-b0d3-d881a6eb4663",
+        "version": 1,
+        "steps": [
+          {
+            "step_id": "9ab1bb9a-565f-4d7d-ab64-87576eec3c42",
+            "step_number": 1,
+            "title": "Loan Request",
+            "identifier": "loan_request",
+            "description": "Enter the key information about your loan to help us tailor the best offer for you",
+            "is_required": true,
+            "is_active": true,
+            "display_order": 0,
+            "metadata": {
+              "icon": "https://api.iconify.design/mdi/credit-card.svg",
+              "estimated_time": "2 minutes"
+            },
+            "sections": [
+              {
+                "section_id": "1d218ef0-83fb-4d13-90b7-9d04b4e23a79",
+                "title": "Loan Details",
+                "identifier": "loan_details",
+                "description": "Enter the key information about your loan to help us tailor the best offer for you.",
+                "icon": "https://api.iconify.design/mdi/file-document.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "fields": [
+                  {
+                    "field_key": "facility_type",
+                    "field_type": "select",
+                    "label": "Facility Type",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": [
+                        "input_credit",
+                        "cash_credit",
+                        "bank_credit_facility",
+                        "government_subsidies",
+                        "buy_inputs",
+                        "sell_harvest"
+                      ]
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false,
+                      "searchable": false
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "input_credit",
+                        "option_label": "Input Credit",
+                        "option_description": "Get flexible credit to buy essential farm inputs when you need them.",
+                        "icon": "https://api.iconify.design/mdi/credit-card.svg",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "cash_credit",
+                        "option_label": "Cash Credit",
+                        "option_description": "Access instant cash credit to manage expenses and grow your farm business.",
+                        "icon": "https://api.iconify.design/mdi/cash.svg",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "bank_credit_facility",
+                        "option_label": "Bank Credit Facility",
+                        "option_description": "A bank credit line is an agreed limit of money that farmers can borrow from the bank whenever needed, and repay later.",
+                        "icon": "https://api.iconify.design/mdi/bank.svg",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "government_subsidies",
+                        "option_label": "Government Subsidies",
+                        "option_description": "Benefit from government programs and subsidies designed to support farmers.",
+                        "icon": "https://api.iconify.design/mdi/handshake.svg",
+                        "display_order": 3,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "buy_inputs",
+                        "option_label": "Buy Inputs",
+                        "option_description": "Purchase high-quality seeds, fertilizers, and tools directly from trusted suppliers.",
+                        "icon": "https://api.iconify.design/mdi/cart.svg",
+                        "display_order": 4,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "sell_harvest",
+                        "option_label": "Sell Harvest",
+                        "option_description": "Easily connect with buyers and sell your harvest at fair market prices.",
+                        "icon": "https://api.iconify.design/mdi/store.svg",
+                        "display_order": 5,
+                        "is_active": true
+                      }
+                    ],
+                    "value": "bank_credit_facility"
+                  },
+                  {
+                    "field_key": "amount",
+                    "field_type": "slider",
+                    "label": "Amount",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "presence": true,
+                      "min": 500,
+                      "max": 40000,
+                      "type": "number",
+                      "divisible_by": 500
+                    },
+                    "field_config": {
+                      "min": 500,
+                      "max": 40000,
+                      "step": 500,
+                      "unit": "₵",
+                      "currency": "GHS",
+                      "show_value": true,
+                      "format": "currency",
+                      "input_mode": ["slider", "text"],
+                      "sync_inputs": true
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": 500
+                  },
+                  {
+                    "field_key": "tenure",
+                    "field_type": "radio",
+                    "label": "Tenure",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": [
+                        "3_months",
+                        "6_months",
+                        "9_months",
+                        "1_year"
+                      ]
+                    },
+                    "field_config": {
+                      "layout": "horizontal",
+                      "options_source": "static"
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "3_months",
+                        "option_label": "3 Months",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "6_months",
+                        "option_label": "6 Months",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "9_months",
+                        "option_label": "9 Months",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "1_year",
+                        "option_label": "1 Year",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 3,
+                        "is_active": true
+                      }
+                    ],
+                    "value": "6_months"
+                  },
+                  {
+                    "field_key": "intended_purpose",
+                    "field_type": "multiselect",
+                    "label": "Intended Purpose",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 3,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_selections": 1,
+                      "allowed_values": [
+                        "purchase_seeds",
+                        "purchase_fertilizer",
+                        "hiring_labor",
+                        "purchase_agro_chemicals",
+                        "equipment_rental",
+                        "other"
+                      ]
+                    },
+                    "field_config": {
+                      "layout": "vertical",
+                      "options_source": "static",
+                      "multiple": true,
+                      "min_selections": 1
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "purchase_seeds",
+                        "option_label": "Purchase of seeds",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "purchase_fertilizer",
+                        "option_label": "Purchase of fertilizer",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "hiring_labor",
+                        "option_label": "Hiring labor",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "purchase_agro_chemicals",
+                        "option_label": "Purchase of agro-chemicals",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 3,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "equipment_rental",
+                        "option_label": "Equipment rental",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 4,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "other",
+                        "option_label": "Other",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 5,
+                        "is_active": true
+                      }
+                    ],
+                    "value": ["equipment_rental"]
+                  },
+                  {
+                    "field_key": "intended_purpose_other",
+                    "field_type": "textarea",
+                    "label": "Add Description",
+                    "placeholder": "Description",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 4,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_length": 10,
+                      "max_length": 500,
+                      "type": "text"
+                    },
+                    "field_config": {
+                      "rows": 4,
+                      "max_length": 500
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "intended_purpose",
+                        "operator": "contains",
+                        "value": "other"
+                      }
+                    },
+                    "options": [],
+                    "value": null
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          },
+          {
+            "step_id": "58fcd245-3079-445c-8fa2-aaa6ba419743",
+            "step_number": 2,
+            "title": "Personal Details",
+            "identifier": "personal_details",
+            "description": "Quickly verify your personal details to check eligibility",
+            "is_required": true,
+            "is_active": true,
+            "display_order": 1,
+            "metadata": {
+              "icon": "https://api.iconify.design/mdi/account.svg"
+            },
+            "sections": [
+              {
+                "section_id": "073b427a-f016-46ed-9982-5a4b425f56b6",
+                "title": "Personal Details",
+                "identifier": "personal_details",
+                "description": null,
+                "icon": "https://api.iconify.design/mdi/account.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "data_source": "external_api",
+                "external_api_config": {
+                  "endpoint": "/api/v1/auth/users/me",
+                  "method": "GET",
+                  "response_key": "data"
+                },
+                "fields": [
+                  {
+                    "field_key": "name_as_per_id",
+                    "field_type": "text",
+                    "label": "Name as per ID",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_length": 2,
+                      "max_length": 255,
+                      "type": "text"
+                    },
+                    "field_config": {
+                      "editable": false,
+                      "autocomplete": "name",
+                      "prefill_from": "name"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "FASHIMA DEEN"
+                  },
+                  {
+                    "field_key": "ghana_card_number",
+                    "field_type": "text",
+                    "label": "Ghana Card Number",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "presence": true,
+                      "pattern": "^GHA-\\d{9}-\\d{1}$",
+                      "type": "text"
+                    },
+                    "field_config": {
+                      "editable": false,
+                      "format": "ghana_card",
+                      "prefill_from": "ghana_card_number"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "GHA-712491088-0"
+                  },
+                  {
+                    "field_key": "date_of_birth",
+                    "field_type": "date",
+                    "label": "Date of Birth",
+                    "placeholder": "15 February 1990",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "date",
+                      "max_date": "today",
+                      "min_date": "1900-01-01"
+                    },
+                    "field_config": {
+                      "editable": false,
+                      "format": "DD MMMM YYYY",
+                      "date_picker": false,
+                      "max_date": "today",
+                      "prefill_from": "date_of_birth"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "1986-02-14"
+                  },
+                  {
+                    "field_key": "gender",
+                    "field_type": "text",
+                    "label": "Gender",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 3,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "text"
+                    },
+                    "field_config": {
+                      "editable": false,
+                      "display_format": "capitalize",
+                      "prefill_from": "gender"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "Female"
+                  },
+                  {
+                    "field_key": "nationality",
+                    "field_type": "select",
+                    "label": "Nationality",
+                    "placeholder": "Select",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 4,
+                    "validation_rules": {
+                      "presence": true
+                    },
+                    "field_config": {
+                      "options_source": "api",
+                      "api_endpoint": "/api/v1/countries",
+                      "multiple": false,
+                      "searchable": true,
+                      "editable": false,
+                      "prefill_from": "nationality"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "GHA"
+                  },
+                  {
+                    "field_key": "is_part_of_cooperatives",
+                    "field_type": "select",
+                    "label": "Are you part of any cooperatives?",
+                    "placeholder": "Please select",
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 5,
+                    "field_config": {
+                      "options_source": "api",
+                      "api_endpoint": "/api/v1/cooperatives",
+                      "multiple": false,
+                      "searchable": true
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "yes"
+                  }
+                ]
+              },
+              {
+                "section_id": "e166aca5-0352-422c-8747-8e240f226f0b",
+                "title": "Residential Address",
+                "identifier": "residential_address",
+                "description": null,
+                "icon": null,
+                "display_order": 1,
+                "is_required": true,
+                "is_active": true,
+                "fields": [
+                  {
+                    "field_key": "resident_ownership",
+                    "field_type": "radio",
+                    "label": "Resident Ownership",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": ["owned", "rented"]
+                    },
+                    "field_config": {
+                      "layout": "horizontal",
+                      "options_source": "static"
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "owned",
+                        "option_label": "Owned",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "rented",
+                        "option_label": "Rented",
+                        "option_description": null,
+                        "icon": null,
+                        "display_order": 1,
+                        "is_active": true
+                      }
+                    ],
+                    "value": "owned"
+                  },
+                  {
+                    "field_key": "residential_ghana_post_gps_number",
+                    "field_type": "text",
+                    "label": "Ghana Post GPS Number",
+                    "placeholder": "GA-100-4013",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "presence": true,
+                      "pattern": "^[A-Z]{2,3}-\\d{3}-\\d{4}$",
+                      "type": "text"
+                    },
+                    "field_config": {
+                      "format": "ghana_gps",
+                      "show_map_icon": true,
+                      "autocomplete": "off"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "SS-222-2222"
+                  }
+                ]
+              },
+              {
+                "section_id": "03b3c212-f5d4-4363-b61b-199796200844",
+                "title": "Declaration",
+                "identifier": "declaration",
+                "description": null,
+                "icon": null,
+                "display_order": 2,
+                "is_required": true,
+                "is_active": true,
+                "fields": [
+                  {
+                    "field_key": "is_politically_exposed_person",
+                    "field_type": "toggle",
+                    "label": "Are you or any first degree relative a Politically Exposed Person (P.E.P)?",
+                    "placeholder": null,
+                    "helper_text": "What is P.E.P?",
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "boolean"
+                    },
+                    "field_config": {
+                      "default_value": false,
+                      "labels": {
+                        "true": "YES",
+                        "false": "NO"
+                      },
+                      "help_link": "/help/pep"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": false
+                  },
+                  {
+                    "field_key": "pep_help_text",
+                    "field_type": "tooltip",
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 1,
+                    "field_config": {
+                      "display_format": "tooltip",
+                      "trigger": "click",
+                      "label": "What is P.E.P.?",
+                      "content": "A Politically Exposed Person (PEP) is someone who holds, or has recently held, a prominent public position — such as a senior government official, politician etc. First-degree relatives (spouse, parent, child, sibling) and close associates of a PEP are also considered PEPs."
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "pep_name",
+                    "field_type": "text",
+                    "label": "Name",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_length": 2,
+                      "max_length": 255,
+                      "type": "text"
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "is_politically_exposed_person",
+                        "operator": "equals",
+                        "value": true
+                      }
+                    },
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "pep_relationship",
+                    "field_type": "select",
+                    "label": "Relationship",
+                    "placeholder": "Select",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": [
+                        "spouse",
+                        "parent",
+                        "child",
+                        "sibling",
+                        "other"
+                      ]
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "is_politically_exposed_person",
+                        "operator": "equals",
+                        "value": true
+                      }
+                    },
+                    "options": [
+                      {
+                        "option_value": "spouse",
+                        "option_label": "Spouse",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "parent",
+                        "option_label": "Parent",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "child",
+                        "option_label": "Child",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "sibling",
+                        "option_label": "Sibling",
+                        "display_order": 3,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "other",
+                        "option_label": "Other",
+                        "display_order": 4,
+                        "is_active": true
+                      }
+                    ],
+                    "value": null
+                  },
+                  {
+                    "field_key": "pep_position",
+                    "field_type": "text",
+                    "label": "Position",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 3,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_length": 2,
+                      "max_length": 255,
+                      "type": "text"
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "is_politically_exposed_person",
+                        "operator": "equals",
+                        "value": true
+                      }
+                    },
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "has_relative_in_dabidi_program",
+                    "field_type": "toggle",
+                    "label": "Do you have any relative working in the Fauree Agri?",
+                    "placeholder": null,
+                    "helper_text": "What is Connected Party?",
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 4,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "boolean"
+                    },
+                    "field_config": {
+                      "default_value": false,
+                      "labels": {
+                        "true": "YES",
+                        "false": "NO"
+                      },
+                      "help_link": "/help/connected-party"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": false
+                  },
+                  {
+                    "field_key": "connected_party_help_text",
+                    "field_type": "tooltip",
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 5,
+                    "field_config": {
+                      "display_format": "tooltip",
+                      "trigger": "click",
+                      "label": "What is Connected Party?",
+                      "content": "A Connected Party is an individual who has a direct personal or professional relationship with an employee, officer, or decision-maker of the organization or program."
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "connected_party_name",
+                    "field_type": "text",
+                    "label": "Name",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 5,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_length": 2,
+                      "max_length": 255,
+                      "type": "text"
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "has_relative_in_dabidi_program",
+                        "operator": "equals",
+                        "value": true
+                      }
+                    },
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "connected_party_relationship",
+                    "field_type": "select",
+                    "label": "Relationship",
+                    "placeholder": "Select",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 6,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": [
+                        "spouse",
+                        "parent",
+                        "child",
+                        "sibling",
+                        "other"
+                      ]
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "has_relative_in_dabidi_program",
+                        "operator": "equals",
+                        "value": true
+                      }
+                    },
+                    "options": [
+                      {
+                        "option_value": "spouse",
+                        "option_label": "Spouse",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "parent",
+                        "option_label": "Parent",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "child",
+                        "option_label": "Child",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "sibling",
+                        "option_label": "Sibling",
+                        "display_order": 3,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "other",
+                        "option_label": "Other",
+                        "display_order": 4,
+                        "is_active": true
+                      }
+                    ],
+                    "value": null
+                  },
+                  {
+                    "field_key": "connected_party_position",
+                    "field_type": "text",
+                    "label": "Position",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 7,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_length": 2,
+                      "max_length": 255,
+                      "type": "text"
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "has_relative_in_dabidi_program",
+                        "operator": "equals",
+                        "value": true
+                      }
+                    },
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "confirm_id_accuracy",
+                    "field_type": "checkbox",
+                    "label": "I confirm and agree that all the information on my ID is accurate.",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 8,
+                    "validation_rules": {
+                      "presence": true,
+                      "must_be_true": true,
+                      "type": "boolean"
+                    },
+                    "field_config": {
+                      "default_value": false
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": true
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          },
+          {
+            "step_id": "09e7adde-a8ad-464a-918a-8e45ed469578",
+            "step_number": 3,
+            "title": "Farm Details",
+            "identifier": "farm_details",
+            "description": "Select the farm(s) for this loan application",
+            "is_required": true,
+            "is_active": true,
+            "display_order": 2,
+            "metadata": {
+              "icon": "https://api.iconify.design/mdi/barn.svg",
+              "estimated_time": "1 minute"
+            },
+            "sections": [
+              {
+                "section_id": "4cecf877-80f2-46cd-abba-4220c10a4c6f",
+                "title": "Select Farm",
+                "identifier": "select_farm",
+                "description": "Choose the farm(s) you want to use for this loan application",
+                "icon": "https://api.iconify.design/mdi/barn.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "fields": [
+                  {
+                    "field_key": "selected_farms",
+                    "field_type": "multiselect",
+                    "label": "Select Farm",
+                    "placeholder": null,
+                    "helper_text": "Select at least one farm from your registered farms",
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "min_selections": 1,
+                      "validation_messages": {
+                        "min_selections": "Please select at least one farm to continue."
+                      }
+                    },
+                    "data_source": "external_api",
+                    "external_api_config": {
+                      "endpoint": "/api/v1/farms",
+                      "method": "GET",
+                      "response_key": "data",
+                      "item_identifier": "uuid",
+                      "item_display": "ghana_post_gps_number",
+                      "display_fields": {
+                        "ownership": "owns_farm",
+                        "farm_size": "farm_size",
+                        "farm_size_unit": "farm_size_unit",
+                        "primary_produce": "primary_crop",
+                        "secondary_produce": "secondary_crop",
+                        "ghana_post_gps": "ghana_post_gps_number"
+                      }
+                    },
+                    "field_config": {
+                      "display_format": "accordion",
+                      "multiple": true,
+                      "min_selections": 1,
+                      "show_details": true,
+                      "searchable": false,
+                      "collapsible": true,
+                      "default_collapsed": true
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": ["e3645c3d-7558-472f-837b-76caab7230ce"]
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          },
+          {
+            "step_id": "68c7a7f7-3941-44c0-9e67-877021bce444",
+            "step_number": 4,
+            "title": "Financial Profile",
+            "identifier": "financial_profile",
+            "description": null,
+            "is_required": true,
+            "is_active": true,
+            "display_order": 3,
+            "metadata": {
+              "icon": "https://api.iconify.design/mdi/currency-usd.svg"
+            },
+            "sections": [
+              {
+                "section_id": "9bdd9674-58d8-4859-ba8a-6c31f3cc5959",
+                "title": "Harvest Details",
+                "identifier": "harvest_details",
+                "description": null,
+                "icon": "https://api.iconify.design/mdi/leaf.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "metadata": {
+                  "tooltip": "Choose the crop you plan to grow and need funding for."
+                },
+                "fields": [
+                  {
+                    "field_key": "selected_produce",
+                    "field_type": "radio",
+                    "label": "Select Produce",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": [
+                        "maize",
+                        "soybean",
+                        "sorghum",
+                        "rice",
+                        "tomato",
+                        "onion",
+                        "pepper",
+                        "cowpea"
+                      ],
+                      "must_match_farm_crops": true,
+                      "validation_messages": {
+                        "presence": "Please select a crop.",
+                        "must_match_farm_crops": "Selected crop must match either your primary or secondary crop"
+                      }
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "layout": "grid",
+                      "display_format": "icon_cards",
+                      "multiple": false,
+                      "show_icons": true,
+                      "card_style": true
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "maize",
+                        "option_label": "Maize",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/corn.svg",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "soybean",
+                        "option_label": "Soybean",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/seed.svg",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "sorghum",
+                        "option_label": "Sorghum",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/wheat.svg",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "rice",
+                        "option_label": "Rice",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/rice.svg",
+                        "display_order": 3,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "tomato",
+                        "option_label": "Tomato",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/food.svg",
+                        "display_order": 4,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "onion",
+                        "option_label": "Onion",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/food.svg",
+                        "display_order": 5,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "pepper",
+                        "option_label": "Pepper",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/pepper-hot.svg",
+                        "display_order": 6,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "cowpea",
+                        "option_label": "Cowpea",
+                        "option_description": null,
+                        "icon": "https://api.iconify.design/mdi/seed.svg",
+                        "display_order": 7,
+                        "is_active": true
+                      }
+                    ],
+                    "value": "onion"
+                  },
+                  {
+                    "field_key": "expected_volume",
+                    "field_type": "number",
+                    "label": "Expected Volume",
+                    "placeholder": "0.00",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "number",
+                      "min": 0.01,
+                      "precision": 2,
+                      "validation_messages": {
+                        "presence": "Please enter a valid volume greater than zero.",
+                        "min": "Please enter a valid volume greater than zero."
+                      }
+                    },
+                    "field_config": {
+                      "decimal_places": 2,
+                      "step": 0.01,
+                      "min": 0,
+                      "max": null
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "22"
+                  },
+                  {
+                    "field_key": "expected_volume_unit",
+                    "field_type": "select",
+                    "label": "Units",
+                    "placeholder": "Please Select",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": ["bags", "kg", "tons", "MT"],
+                      "validation_messages": {
+                        "presence": "Units required."
+                      }
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false,
+                      "searchable": false
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "bags",
+                        "option_label": "bag(s)",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "kg",
+                        "option_label": "kg(s)",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "tons",
+                        "option_label": "ton(s)",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "MT",
+                        "option_label": "MT",
+                        "display_order": 3,
+                        "is_active": true
+                      }
+                    ],
+                    "value": "tons"
+                  },
+                  {
+                    "field_key": "expected_selling_price_per_unit",
+                    "field_type": "number",
+                    "label": "Expected Selling Price per Unit",
+                    "placeholder": "0.00",
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 3,
+                    "validation_rules": {
+                      "type": "number",
+                      "min": 0.01,
+                      "precision": 2,
+                      "validation_messages": {
+                        "min": "Please enter a valid expected price greater than zero."
+                      }
+                    },
+                    "field_config": {
+                      "decimal_places": 2,
+                      "step": 0.01,
+                      "min": 0,
+                      "currency": "GHS"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "22"
+                  },
+                  {
+                    "field_key": "expected_grade",
+                    "field_type": "select",
+                    "label": "Expected Grade",
+                    "placeholder": "Please Select",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 4,
+                    "validation_rules": {
+                      "presence": true,
+                      "validation_messages": {
+                        "presence": "Please select Expected Grade."
+                      }
+                    },
+                    "field_config": {
+                      "options_source": "api",
+                      "api_endpoint": "/api/v1/produce/grades",
+                      "multiple": false,
+                      "searchable": false
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "D"
+                  }
+                ]
+              },
+              {
+                "section_id": "1c418d26-cee2-4afd-bedf-fa2d1f6a4fa7",
+                "title": "Borrowing Details",
+                "identifier": "borrowing_details",
+                "description": null,
+                "icon": "https://api.iconify.design/mdi/bank.svg",
+                "display_order": 1,
+                "is_required": false,
+                "is_active": true,
+                "metadata": {
+                  "tooltip": "Outstanding farm loans include any supplier or buyer credit yet to be settled."
+                },
+                "fields": [
+                  {
+                    "field_key": "lender",
+                    "field_type": "select",
+                    "label": "Lender",
+                    "placeholder": "Enter lender name",
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 0,
+                    "field_config": {
+                      "options_source": "api",
+                      "api_endpoint": "/api/v1/lenders",
+                      "multiple": false,
+                      "searchable": true,
+                      "allow_custom": true
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "borrowing_facility_type",
+                    "field_type": "select",
+                    "label": "Facility type",
+                    "placeholder": "Type",
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "validation_messages": {
+                        "presence": "Please select Facility Type"
+                      }
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false,
+                      "searchable": false
+                    },
+                    "conditional_logic": {
+                      "required_if": {
+                        "field_key": "lender",
+                        "operator": "present"
+                      }
+                    },
+                    "options": [
+                      {
+                        "option_value": "input_credit",
+                        "option_label": "Input Credit",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "supplier_credit",
+                        "option_label": "Supplier Credit",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "bank_loan",
+                        "option_label": "Bank Loan",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "overdraft",
+                        "option_label": "Overdraft",
+                        "display_order": 3,
+                        "is_active": true
+                      }
+                    ],
+                    "value": null
+                  },
+                  {
+                    "field_key": "outstanding_amount",
+                    "field_type": "number",
+                    "label": "Outstanding",
+                    "placeholder": "0.00",
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "type": "number",
+                      "min": 0.01,
+                      "precision": 2,
+                      "validation_messages": {
+                        "min": "Outstanding amount must be more than zero."
+                      }
+                    },
+                    "field_config": {
+                      "decimal_places": 2,
+                      "step": 0.01,
+                      "min": 0,
+                      "currency_symbol": "¢"
+                    },
+                    "conditional_logic": {
+                      "required_if": {
+                        "field_key": "lender",
+                        "operator": "present"
+                      }
+                    },
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "outstanding_currency",
+                    "field_type": "select",
+                    "label": "Currency",
+                    "placeholder": "Please Select",
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 3,
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false,
+                      "searchable": false
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "GHS",
+                        "option_label": "Ghana Cedi (GHS)",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "USD",
+                        "option_label": "US Dollar (USD)",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "EUR",
+                        "option_label": "Euro (EUR)",
+                        "display_order": 2,
+                        "is_active": true
+                      }
+                    ],
+                    "value": null
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          },
+          {
+            "step_id": "d733ba40-098c-47f1-ab6b-de1b74017955",
+            "step_number": 5,
+            "title": "Documents",
+            "identifier": "documents",
+            "description": null,
+            "is_required": true,
+            "is_active": true,
+            "display_order": 4,
+            "metadata": {
+              "icon": "https://api.iconify.design/mdi/file-document.svg"
+            },
+            "sections": [
+              {
+                "section_id": "92161215-0c11-4bc6-97ab-fb9157c6fe6d",
+                "title": "Supporting Documents (Optional)",
+                "identifier": "supporting_documents",
+                "description": "Please note that banks might visit for physical inspection.",
+                "helper_text": "Please upload PDF, PNG, JPG, SVG file format and we support max size 10 MB.",
+                "icon": "https://api.iconify.design/mdi/folder.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "data_source": "external_api",
+                "external_api_config": {
+                  "api_endpoints": {
+                    "create_presigned_url": {
+                      "method": "POST",
+                      "endpoint": "/api/v1/documents/presigned-url",
+                      "description": "Get presigned URL and create document record"
+                    },
+                    "list_documents": {
+                      "method": "GET",
+                      "endpoint": "/api/v1/documents",
+                      "description": "Get all documents (optional query: ?product_submission_id=uuid)"
+                    },
+                    "get_document": {
+                      "method": "GET",
+                      "endpoint": "/api/v1/documents/:id",
+                      "description": "Get single document by ID"
+                    },
+                    "delete_document": {
+                      "method": "DELETE",
+                      "endpoint": "/api/v1/documents/:id",
+                      "description": "Delete document"
+                    }
+                  }
+                },
+                "fields": [
+                  {
+                    "field_key": "farm_ownership_lease_document",
+                    "field_type": "file",
+                    "label": "Farm Ownership / Lease Document",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "file_types": [
+                        "application/pdf",
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 10
+                    },
+                    "field_config": {
+                      "allowed_types": [
+                        "application/pdf",
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 10,
+                      "multiple": false,
+                      "accept": ".pdf,.jpg,.jpeg,.png,.svg"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "buyer_offtaker_agreement",
+                    "field_type": "file",
+                    "label": "Existing Buyer Agreement or Commitment Letter",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "file_types": [
+                        "application/pdf",
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 10
+                    },
+                    "field_config": {
+                      "allowed_types": [
+                        "application/pdf",
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 10,
+                      "multiple": false,
+                      "accept": ".pdf,.jpg,.jpeg,.png,.svg"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "previous_loan_statement",
+                    "field_type": "file",
+                    "label": "Any Previous Loan Statement",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "file_types": [
+                        "application/pdf",
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 10
+                    },
+                    "field_config": {
+                      "allowed_types": [
+                        "application/pdf",
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 10,
+                      "multiple": false,
+                      "accept": ".pdf,.jpg,.jpeg,.png,.svg"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  }
+                ]
+              },
+              {
+                "section_id": "8764b149-d38a-41cb-b485-bd04d8cfe4d8",
+                "title": "Forward Sale Agreement",
+                "identifier": "forward_sale_agreement",
+                "description": null,
+                "icon": "https://api.iconify.design/mdi/file-document-edit.svg",
+                "display_order": 1,
+                "is_required": false,
+                "is_active": true,
+                "metadata": {
+                  "fsa_modal": {
+                    "title": "You have opted to link to a Sale Agreement.",
+                    "description": "Linking to Smart FSA Contract gives you access to government-verified buyers and guaranteed pricing.",
+                    "actions": [
+                      {
+                        "label": "Skip",
+                        "action_type": "skip",
+                        "closes_modal": true
+                      },
+                      {
+                        "label": "Proceed",
+                        "action_type": "proceed",
+                        "launches_fsa": true
+                      }
+                    ]
+                  }
+                },
+                "fields": [
+                  {
+                    "field_key": "link_to_sale_agreement",
+                    "field_type": "toggle",
+                    "label": "Link to sale agreement?",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "type": "boolean"
+                    },
+                    "field_config": {
+                      "default_value": false,
+                      "labels": {
+                        "true": "YES",
+                        "false": "NO"
+                      }
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": true
+                  },
+                  {
+                    "field_key": "link_fsa_button",
+                    "field_type": "button",
+                    "label": "Link Smart FSA Contract",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 1,
+                    "field_config": {
+                      "button_type": "action",
+                      "action_type": "open_modal",
+                      "modal_type": "fsa_launch"
+                    },
+                    "conditional_logic": {
+                      "show_if": {
+                        "field_key": "link_to_sale_agreement",
+                        "operator": "equals",
+                        "value": true
+                      }
+                    },
+                    "options": [],
+                    "value": null
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          }
+        ],
+        "fsa_steps": [
+          {
+            "step_id": "fed675c1-ea10-4fe9-8ba7-c7dc93169956",
+            "step_number": 6,
+            "title": "Government Verified Buyers",
+            "identifier": "government_verified_buyers",
+            "description": "Browse and select from government verified buyers",
+            "is_required": true,
+            "is_active": true,
+            "display_order": 5,
+            "metadata": {
+              "icon": "https://api.iconify.design/mdi/account-group.svg"
+            },
+            "sections": [
+              {
+                "section_id": "31eb7e31-b916-4fc1-8b0c-18e9cd369243",
+                "title": "Buyer Discovery",
+                "identifier": "buyer_discovery",
+                "description": null,
+                "icon": null,
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "data_source": "external_api",
+                "external_api_config": {
+                  "endpoint": "/api/v1/buyers",
+                  "method": "GET",
+                  "response_key": "data",
+                  "item_identifier": "uuid",
+                  "item_display": "company_name",
+                  "display_fields": {
+                    "company_name": "company_name",
+                    "ghana_post_gps": "ghana_post_gps",
+                    "image_url": "image_url",
+                    "crops": "crops",
+                    "location": "location",
+                    "phone_number": "phone_number"
+                  }
+                },
+                "fields": [
+                  {
+                    "field_key": "buyer_uuid",
+                    "field_type": "hidden",
+                    "label": "Selected Buyer UUID",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "text"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "642bff0f-520a-4d04-a27a-500004a8132a"
+                  }
+                ],
+                "cta": "forward_sale_agreement"
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          },
+          {
+            "step_id": "60517b86-e2ff-4803-97e0-740f483ac7c9",
+            "step_number": 7,
+            "title": "Forward Sale Agreement",
+            "identifier": "forward_sale_agreement",
+            "description": null,
+            "is_required": true,
+            "is_active": true,
+            "display_order": 6,
+            "metadata": {
+              "icon": "https://api.iconify.design/mdi/file-document-edit.svg"
+            },
+            "sections": [
+              {
+                "section_id": "d634b870-3ea9-4881-b3af-a7c9044c5744",
+                "title": "Agreement Details",
+                "identifier": "agreement_details",
+                "description": null,
+                "icon": "https://api.iconify.design/mdi/file-document.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "data_source": "external_api",
+                "external_api_config": {
+                  "endpoint": "/api/v1/sale_agreement_config",
+                  "method": "GET",
+                  "response_key": "data"
+                },
+                "fields": [
+                  {
+                    "field_key": "expected_volume",
+                    "field_type": "number",
+                    "label": "Expected Volume",
+                    "placeholder": "0.00",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "number",
+                      "min": 0.01,
+                      "precision": 2
+                    },
+                    "field_config": {
+                      "decimal_places": 2,
+                      "step": 0.01,
+                      "min": 0,
+                      "unit_field": "expected_volume_unit",
+                      "editable": false,
+                      "prefill_from": "expected_volume"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "22"
+                  },
+                  {
+                    "field_key": "expected_volume_unit",
+                    "field_type": "select",
+                    "label": "Units",
+                    "placeholder": "Select",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": ["bags", "kg", "tons", "MT"]
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false,
+                      "searchable": false,
+                      "editable": true,
+                      "prefill_from": "expected_volume_unit"
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "bags",
+                        "option_label": "bag(s)",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "kg",
+                        "option_label": "kg(s)",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "tons",
+                        "option_label": "ton(s)",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "MT",
+                        "option_label": "MT",
+                        "display_order": 3,
+                        "is_active": true
+                      }
+                    ],
+                    "value": "tons"
+                  },
+                  {
+                    "field_key": "committed_volume",
+                    "field_type": "number",
+                    "label": "Committed Volume",
+                    "placeholder": "0.00",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "presence": true,
+                      "type": "number",
+                      "min": 0.01,
+                      "precision": 2
+                    },
+                    "validation_messages": {
+                      "presence": "Please enter a valid committed volume.",
+                      "min": "Committed volume must be greater than zero.",
+                      "max": "Committed volume cannot exceed your expected harvest volume."
+                    },
+                    "field_config": {
+                      "decimal_places": 2,
+                      "step": 0.01,
+                      "min": 0,
+                      "unit_field": "committed_volume_unit"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "22"
+                  },
+                  {
+                    "field_key": "committed_volume_unit",
+                    "field_type": "select",
+                    "label": "Units",
+                    "placeholder": "Select",
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 3,
+                    "validation_rules": {
+                      "presence": true,
+                      "allowed_values": ["bags", "kg", "tons", "MT"]
+                    },
+                    "field_config": {
+                      "options_source": "static",
+                      "multiple": false,
+                      "searchable": false
+                    },
+                    "conditional_logic": null,
+                    "options": [
+                      {
+                        "option_value": "bags",
+                        "option_label": "bag(s)",
+                        "display_order": 0,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "kg",
+                        "option_label": "kg(s)",
+                        "display_order": 1,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "tons",
+                        "option_label": "ton(s)",
+                        "display_order": 2,
+                        "is_active": true
+                      },
+                      {
+                        "option_value": "MT",
+                        "option_label": "MT",
+                        "display_order": 3,
+                        "is_active": true
+                      }
+                    ],
+                    "value": "tons"
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          },
+          {
+            "step_id": "b16124d4-a0d7-41d2-b255-abcf14c6f689",
+            "step_number": 8,
+            "title": "Forward Sale Agreement",
+            "identifier": "review_agreement",
+            "description": null,
+            "is_required": true,
+            "is_active": true,
+            "display_order": 7,
+            "sections": [
+              {
+                "section_id": "1c3d423b-f139-43d1-8040-efcdf8b75b2c",
+                "title": "Summary and PDF",
+                "identifier": "summary_and_pdf",
+                "description": null,
+                "icon": "https://api.iconify.design/mdi/file-pdf-box.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "fields": [
+                  {
+                    "field_key": "key_terms",
+                    "field_type": "display_content",
+                    "label": "Key Terms",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 0,
+                    "data_source": "external_api",
+                    "external_api_config": {
+                      "endpoint": "/api/v1/key_terms",
+                      "method": "GET",
+                      "response_key": "data",
+                      "query_params": {
+                        "submission_id": "submission_id"
+                      }
+                    },
+                    "field_config": {
+                      "display_format": "text",
+                      "content_type": "key_terms"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "agreement_pdf",
+                    "field_type": "display_content",
+                    "label": "Agreement PDF",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": false,
+                    "is_active": true,
+                    "display_order": 1,
+                    "data_source": "external_api",
+                    "external_api_config": {
+                      "endpoint": "/api/v1/buyers/:buyer_id/agreement_pdf",
+                      "method": "GET",
+                      "response_key": "data"
+                    },
+                    "field_config": {
+                      "display_format": "pdf",
+                      "content_type": "agreement_pdf"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": null
+                  },
+                  {
+                    "field_key": "agreement_accepted",
+                    "field_type": "checkbox",
+                    "label": "I have read and agree to the terms of the Forward Sale Agreement.",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 2,
+                    "validation_rules": {
+                      "presence": true,
+                      "must_be_true": true,
+                      "type": "boolean"
+                    },
+                    "field_config": {
+                      "default_value": false
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": true
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          },
+          {
+            "step_id": "1e73136b-1d7a-4148-a193-f42aa725d0af",
+            "step_number": 9,
+            "title": "Authentication",
+            "identifier": "authentication",
+            "description": null,
+            "is_required": true,
+            "is_active": true,
+            "display_order": 8,
+            "sections": [
+              {
+                "section_id": "3610259d-d497-44f0-a8c2-fa77a24f9cbe",
+                "title": "Signature and Consent",
+                "identifier": "signature_and_consent",
+                "description": "Please sign within the area and proceed to complete your application.",
+                "icon": "https://api.iconify.design/mdi/pencil.svg",
+                "display_order": 0,
+                "is_required": true,
+                "is_active": true,
+                "fields": [
+                  {
+                    "field_key": "signature_image",
+                    "field_type": "file",
+                    "label": "Signature",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 0,
+                    "validation_rules": {
+                      "presence": true,
+                      "file_types": [
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 5
+                    },
+                    "field_config": {
+                      "allowed_types": [
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml"
+                      ],
+                      "max_size_mb": 5,
+                      "multiple": false,
+                      "accept": ".jpg,.jpeg,.png,.svg",
+                      "display_format": "signature_pad"
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": "a87304f9-cb27-424f-9b33-9acfd0673694"
+                  },
+                  {
+                    "field_key": "consent_given",
+                    "field_type": "checkbox",
+                    "label": "I confirm that this is my official signature and I agree to the terms of the Forward Sale Agreement.",
+                    "placeholder": null,
+                    "helper_text": null,
+                    "is_required": true,
+                    "is_active": true,
+                    "display_order": 1,
+                    "validation_rules": {
+                      "presence": true,
+                      "must_be_true": true,
+                      "type": "boolean"
+                    },
+                    "field_config": {
+                      "default_value": false
+                    },
+                    "conditional_logic": null,
+                    "options": [],
+                    "value": true
+                  }
+                ]
+              }
+            ],
+            "status": "completed",
+            "is_draft": false
+          }
+        ]
+      },
+      "created_at": "2026-01-01T05:07:43.594Z",
+      "updated_at": "2026-01-01T05:09:23.338Z"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+    "data": [
+        {
+            "submission_id": "b7435685-7a47-4993-b8ab-18bf35ee88a1",
+            "status": "pending_otp_verification",
+            "loan_amount": 6000,
+            "loan_duration": "6 Months",
+            "loan_type": "Cash Credit",
+            "form_number": "e3645c3d-7558-472f-837b-76caab7230ce",
+            "product_slug": "cash-credit",
+            "submitted_at": null,
+            "created_at": "2025-12-28T10:27:15.717Z"
+        },
+        {
+            "submission_id": "f3d89863-0ba5-4b84-ab9b-819abbcc4b5b",
+            "status": "submitted",
+            "loan_amount": 6000,
+            "loan_duration": "6 Months",
+            "loan_type": "Cash Credit",
+            "form_number": "e3645c3d-7558-472f-837b-76caab7230ce",
+            "product_slug": "cash-credit",
+            "submitted_at": null,
+            "created_at": "2025-12-28T10:27:15.663Z"
+        },
+        {
+            "submission_id": "5f91183a-17c8-4871-90c4-be6a20ed4a15",
+            "status": "submitted",
+            "loan_amount": 3500,
+            "loan_duration": "6 Months",
+            "loan_type": "Bank Credit Facility",
+            "form_number": "e3645c3d-7558-472f-837b-76caab7230ce",
+            "product_slug": "bank-credit-facility",
+            "submitted_at": null,
+            "created_at": "2025-12-28T06:56:22.377Z"
+        },
+        {
+            "submission_id": "61f021bb-89c2-4b42-94e2-7a36a059bc01",
+            "status": "pending_otp_verification",
+            "loan_amount": 8000,
+            "loan_duration": "6 Months",
+            "loan_type": "Bank Credit Facility",
+            "form_number": "e3645c3d-7558-472f-837b-76caab7230ce",
+            "product_slug": "bank-credit-facility",
+            "submitted_at": null,
+            "created_at": "2025-12-28T06:56:22.315Z"
+        }
+    ]
+}

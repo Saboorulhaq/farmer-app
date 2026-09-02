@@ -1,0 +1,1238 @@
+
+ {
+    "id": "72bf539c-e2f7-47f8-b4ed-43aaf44488d6",
+    "type": "product_configuration",
+    "attributes": {
+      "product_id": "81fef896-8bf1-455e-b680-50851c768ff6",
+      "slug": "buy-inputs",
+      "name": "Buy Now, Pay Later",
+      "short_description": "Buy inputs instantly with flexible provider or bank credit.",
+      "instructions": {
+        "why_apply_with_us": [
+          "Simple process – Apply from your phone in a few minutes.",
+          "Easy requirements – Start with your CNIC Card and basic farm details.",
+          "Affordable finance – Competitive rates designed for farmers.",
+          "Flexible repayment – Linked to your harvest cycle.",
+          "Trusted partners – Supported by cooperatives, buyers, and financial institutions.",
+          "Grow more, earn more – Finance for seeds, fertilizer, equipment, and farm labour."
+        ],
+        "eligibility_criteria": [
+          "Must be 18 years or older with a valid CNIC Card.",
+          "Should be actively farming or involved in agriculture.",
+          "Should have access to own farmland or valid lease.",
+          "Loan should be for farm purposes only (seeds, fertilizer, equipment, labour).",
+          "Should be a member of a cooperative or have a buyer/off-taker agreement."
+        ]
+      },
+      "picture_url": "https://financing-static-assets.s3.ap-south-1.amazonaws.com/input-credit.png",
+      "version": 1,
+      "steps": [
+        {
+          "step_id": "a6276a84-57ad-4ae2-b019-5244bd14b525",
+          "step_number": 1,
+          "title": "Government Verified Provider",
+          "identifier": "government_verified_provider",
+          "description": "",
+          "is_required": true,
+          "is_active": true,
+          "display_order": 0,
+          "metadata": {
+            "icon": "https://api.iconify.design/mdi/account-group.svg"
+          },
+          "sections": [
+            {
+              "section_id": "6b31b6ae-c9bc-4d4f-96df-a830ce3c9f97",
+              "title": "Provider Discovery",
+              "identifier": "provider_discovery",
+              "description": null,
+              "icon": null,
+              "display_order": 0,
+              "is_required": true,
+              "is_active": true,
+              "data_source": "external_api",
+              "external_api_config": {
+                "endpoint": "/api/v1/input_providers",
+                "method": "GET",
+                "response_key": "data",
+                "item_identifier": "id",
+                "item_display": "attributes.name",
+                "display_fields": {
+                  "company_name": "attributes.name",
+                  "addressLine": "attributes.addressLine",
+                  "image_url": "attributes.image_url",
+                  "crops": "attributes.crops",
+                  "location": "attributes.location",
+                  "phone_number": "attributes.phone_number"
+                }
+              },
+              "metadata": {},
+              "fields": [
+                {
+                  "field_key": "provider_id",
+                  "field_type": "hidden",
+                  "label": "Selected Provider ID",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "type": "text"
+                  },
+                  "field_config": {},
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ],
+              "cta": "input_purchase_details"
+            }
+          ],
+          "status": "not_started"
+        },
+        {
+          "step_id": "c976ccda-cc94-4d10-9ccf-473f32ea3e12",
+          "step_number": 2,
+          "title": "Input Purchase Details",
+          "identifier": "input_purchase_details",
+          "description": null,
+          "is_required": true,
+          "is_active": true,
+          "display_order": 1,
+          "metadata": {},
+          "sections": [
+            {
+              "section_id": "f659126c-86b9-45e2-b06f-88caed516885",
+              "title": null,
+              "identifier": "purchase_details",
+              "description": null,
+              "icon": "https://api.iconify.design/mdi/file-document.svg",
+              "display_order": 0,
+              "is_required": true,
+              "is_active": true,
+              "data_source": "external_api",
+              "external_api_config": {
+                "endpoint": "/api/v1/provider_catalogue/providers/:provider_id/items",
+                "method": "GET",
+                "response_key": "data"
+              },
+              "fields": [
+                {
+                  "field_key": "inputs_required",
+                  "field_type": "select",
+                  "label": "Inputs Required",
+                  "placeholder": "Select Input",
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true
+                  },
+                  "field_config": {
+                    "options_source": "api",
+                    "multiple": false,
+                    "searchable": true
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "selected_item_id",
+                  "field_type": "hidden",
+                  "label": "Selected Item ID",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "type": "text"
+                  },
+                  "field_config": {},
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "select_variety",
+                  "field_type": "select",
+                  "label": "Select Variety",
+                  "placeholder": "Select Variety",
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 1,
+                  "validation_rules": {
+                    "presence": true
+                  },
+                  "external_api_config": {
+                    "item_identifier": "item_name",
+                    "item_display": "item_name",
+                    "filter_by": {
+                      "parent_field": "inputs_required",
+                      "filter_key": "type"
+                    },
+                    "items_path": "items"
+                  },
+                  "field_config": {
+                    "multiple": false,
+                    "searchable": true
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "unit_price",
+                  "field_type": "text",
+                  "label": "Unit Price",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 2,
+                  "validation_rules": {},
+                  "field_config": {
+                    "display_format": "currency",
+                    "currency": "PKR",
+                    "symbol": "Rs",
+                    "prefill_from": "select_variety",
+                    "editable": false,
+                    "prefill_path": "price"
+                  },
+                  "conditional_logic": {
+                    "show_if": {
+                      "field_key": "select_variety",
+                      "operator": "present"
+                    }
+                  },
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "quantity",
+                  "field_type": "number",
+                  "label": "Quantity",
+                  "placeholder": "0.00",
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 3,
+                  "validation_rules": {
+                    "presence": true,
+                    "type": "number",
+                    "min": 0.01,
+                    "precision": 2
+                  },
+                  "field_config": {
+                    "decimal_places": 2,
+                    "step": 0.01,
+                    "min": 0,
+                    "unit_field": "quantity_unit"
+                  },
+                  "conditional_logic": {
+                    "show_if": {
+                      "field_key": "select_variety",
+                      "operator": "present"
+                    }
+                  },
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "quantity_unit",
+                  "field_type": "select",
+                  "label": "Unit",
+                  "placeholder": "Select unit",
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 4,
+                  "validation_rules": {
+                    "presence": true
+                  },
+                  "field_config": {
+                    "options_source": "dynamic",
+                    "prefill_from": "select_variety",
+                    "prefill_path": "measuring_unit",
+                    "options": []
+                  },
+                  "conditional_logic": {
+                    "show_if": {
+                      "field_key": "select_variety",
+                      "operator": "present"
+                    }
+                  },
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "add_inputs",
+                  "field_type": "button",
+                  "label": "Add Inputs",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 5,
+                  "validation_rules": {},
+                  "field_config": {
+                    "button_type": "add",
+                    "icon": "plus"
+                  },
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "add_to_cart",
+                  "field_type": "button",
+                  "label": "Add to cart",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 6,
+                  "validation_rules": {},
+                  "field_config": {
+                    "button_type": "add",
+                    "icon": "plus"
+                  },
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            }
+          ],
+          "status": "not_started"
+        },
+        {
+          "step_id": "d4843a60-95c6-4a95-9b85-045b8655eacc",
+          "step_number": 3,
+          "title": "Cart Summary",
+          "identifier": "cart_summary",
+          "description": "",
+          "is_required": true,
+          "is_active": true,
+          "display_order": 2,
+          "sections": [
+            {
+              "section_id": "9248f470-1ece-489d-a3ff-8173540893c0",
+              "title": "",
+              "identifier": "cart_items",
+              "description": null,
+              "icon": null,
+              "display_order": 0,
+              "is_required": true,
+              "is_active": true,
+              "data_source": "external_api",
+              "external_api_config": {
+                "endpoint": "/api/v1/cart/items",
+                "method": "GET",
+                "response_key": "data",
+                "item_identifier": "id",
+                "display_fields": {
+                  "item_name": "item_name",
+                  "unit_price": "unit_price",
+                  "quantity": "quantity",
+                  "quantity_unit": "quantity_unit",
+                  "total_price": "total_price",
+                  "currency_symbol": "currency_symbol",
+                  "provider_id": "provider_id",
+                  "provider_name": "provider_name",
+                  "selected_item_id": "selected_item_id"
+                }
+              },
+              "metadata": {
+                "item_actions": [
+                  {
+                    "label": "View",
+                    "action_type": "navigate",
+                    "action_target": "input_purchase_details",
+                    "icon": "https://api.iconify.design/mdi/eye-outline.svg"
+                  },
+                  {
+                    "label": "Delete",
+                    "action_type": "api_call",
+                    "action_endpoint": "/api/v1/cart/items/:item_id",
+                    "action_method": "DELETE",
+                    "icon": "https://api.iconify.design/mdi/delete-outline.svg",
+                    "requires_confirmation": true
+                  }
+                ]
+              },
+              "fields": [
+                {
+                  "field_key": "cart_items",
+                  "field_type": "display_table",
+                  "label": "",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "min_items": 1
+                  },
+                  "field_config": {
+                    "display_format": "table",
+                    "editable": false,
+                    "prefill_from": "cart_items"
+                  },
+                  "display_keys": {
+                    "item": "ITEMS",
+                    "price": "PRICE",
+                    "qty": "QTY.",
+                    "total": "TOTAL"
+                  },
+                  "display_values": {
+                    "item": "item_name",
+                    "price": "unit_price",
+                    "qty": "quantity",
+                    "total": "total_price"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            },
+            {
+              "section_id": "7de2771f-d50d-42f1-9af5-0e6e256dbaff",
+              "title": "Details",
+              "identifier": "cart_summary_details",
+              "description": null,
+              "icon": null,
+              "display_order": 1,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {
+                "active_tab": "Details",
+                "tabs": [
+                  "Details"
+                ]
+              },
+              "external_api_config": {
+                "endpoint": "/api/v1/cart/summary",
+                "method": "GET",
+                "response_key": "data"
+              },
+              "fields": [
+                {
+                  "field_key": "cart_details",
+                  "field_type": "display_card",
+                  "label": "",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "min_items": 1
+                  },
+                  "field_config": {
+                    "display_format": "display_content",
+                    "editable": false
+                  },
+                  "display_keys": {
+                    "item_count": "Items",
+                    "invoice_discount": "Invoice Discount",
+                    "total": "Total.",
+                    "total_incl_tax": "Total Incl. tax"
+                  },
+                  "display_values": {
+                    "item_count": "item_count",
+                    "invoice_discount": "invoice_discount",
+                    "total": "total",
+                    "total_incl_tax": "total_incl_tax"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            }
+          ],
+          "status": "not_started"
+        },
+        {
+          "step_id": "d90669bb-fccc-4fe3-9c63-efaed907aca0",
+          "step_number": 4,
+          "title": "Checkout",
+          "identifier": "checkout",
+          "description": "",
+          "is_required": true,
+          "is_active": true,
+          "display_order": 3,
+          "metadata": {
+            "icon": "https://api.iconify.design/mdi/cash-register.svg"
+          },
+          "sections": [
+            {
+              "section_id": "524649b2-5903-4bcd-8a7a-02304f5d55f1",
+              "title": "",
+              "identifier": "po_detail_summary",
+              "description": null,
+              "icon": null,
+              "display_order": 0,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {},
+              "external_api_config": {
+                "endpoint": "/api/v1/cart/summary",
+                "method": "GET",
+                "response_key": "data"
+              },
+              "fields": [
+                {
+                  "field_key": "checkout_detail_summary",
+                  "field_type": "display_card",
+                  "label": "",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "min_items": 1
+                  },
+                  "field_config": {
+                    "display_format": "display_content",
+                    "editable": false
+                  },
+                  "display_keys": {
+                    "bill_to": "Bill To",
+                    "invoice_number": "Invoice #",
+                    "invoice_date": "Invoice Date",
+                    "due_date": "Due Date",
+                    "price": "Price"
+                  },
+                  "display_values": {
+                    "bill_to": "bill_to",
+                    "invoice_number": "invoice_number",
+                    "invoice_date": "invoice_date",
+                    "due_date": "due_date",
+                    "price": "price"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            },
+            {
+              "section_id": "9a84709a-40c3-46f2-8bc0-b5493bb67a07",
+              "title": "",
+              "identifier": "po_line_items",
+              "description": null,
+              "icon": null,
+              "display_order": 1,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {},
+              "external_api_config": {
+                "endpoint": "/api/v1/cart/summary",
+                "method": "GET",
+                "response_key": "data"
+              },
+              "fields": [
+                {
+                  "field_key": "po_line_items",
+                  "field_type": "display_table",
+                  "label": "",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "min_items": 1
+                  },
+                  "field_config": {
+                    "display_format": "display_table",
+                    "editable": false
+                  },
+                  "display_keys": {
+                    "selected_item_id": "Selected Item ID",
+                    "item_number": "Item Number",
+                    "item_name": "Items",
+                    "price": "Price",
+                    "qty": "Qty",
+                    "total": "Total"
+                  },
+                  "display_values": {
+                    "selected_item_id": "selected_item_id",
+                    "item_number": "item_number",
+                    "item_name": "item_name",
+                    "price": "price",
+                    "qty": "qty",
+                    "total": "total"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            },
+            {
+              "section_id": "8594e7f0-3944-4588-965d-5c9df68d1669",
+              "title": "",
+              "identifier": "checkout_total_summary",
+              "description": null,
+              "icon": null,
+              "display_order": 2,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {},
+              "external_api_config": {
+                "endpoint": "/api/v1/cart/summary",
+                "method": "GET",
+                "response_key": "data"
+              },
+              "fields": [
+                {
+                  "field_key": "checkout_total_summary",
+                  "field_type": "display_card",
+                  "label": "",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "min_items": 1
+                  },
+                  "field_config": {
+                    "display_format": "display_card",
+                    "editable": false
+                  },
+                  "display_keys": {
+                    "sub_total": "Sub Total",
+                    "total": "Total",
+                    "balance_due": "Balance Due"
+                  },
+                  "display_values": {
+                    "sub_total": "sub_total",
+                    "total": "total",
+                    "balance_due": "balance_due"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            },
+            {
+              "section_id": "c46ad63c-aada-44d7-82d1-7a6dfa49cbdc",
+              "title": "Delivery Options",
+              "identifier": "delivery_options",
+              "description": null,
+              "icon": null,
+              "display_order": 3,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {},
+              "external_api_config": {
+                "endpoint": "/api/v1/checkout/delivery_options",
+                "method": "GET",
+                "response_key": "data"
+              },
+              "fields": [
+                {
+                  "field_key": "delivery_option",
+                  "field_type": "select",
+                  "label": "DELIVERY OPTIONS",
+                  "placeholder": "Select",
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true
+                  },
+                  "field_config": {
+                    "options_source": "static",
+                    "multiple": false,
+                    "searchable": false
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": [
+                    {
+                      "option_value": "doorstep_delivery",
+                      "option_label": "Doorstep Delivery",
+                      "display_order": 0,
+                      "is_active": true
+                    },
+                    {
+                      "option_value": "pickup",
+                      "option_label": "Pickup",
+                      "display_order": 1,
+                      "is_active": true
+                    }
+                  ]
+                },
+                {
+                  "field_key": "delivery_address",
+                  "field_type": "select",
+                  "label": "Delivery Address",
+                  "placeholder": "Select",
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 1,
+                  "validation_rules": {
+                    "type": "text"
+                  },
+                  "field_config": {
+                    "options_source": "api",
+                    "api_endpoint": "/api/v1/auth/users/me",
+                    "display_format": "bottom_sheet",
+                    "options_map": [
+                      {
+                        "option_label": "Postal Code",
+                        "option_value_path": "data.attributes.ghana_post_gps_number"
+                      },
+                      {
+                        "option_label": "Residential Address",
+                        "option_value_path": "data.attributes.address"
+                      }
+                    ]
+                  },
+                  "conditional_logic": {
+                    "show_if": {
+                      "field_key": "delivery_option",
+                      "operator": "equals",
+                      "value": "doorstep_delivery"
+                    }
+                  },
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            },
+            {
+              "section_id": "0129428d-a983-49ef-a8e2-9b59f60bd766",
+              "title": "Mode of Payment",
+              "identifier": "mode_of_payment",
+              "description": null,
+              "icon": null,
+              "display_order": 4,
+              "is_required": true,
+              "is_active": true,
+              "data_source": "external_api",
+              "metadata": {
+                "display_type": "payment_methods",
+                "default_payment_method": "Provider Credit"
+              },
+              "fields": [
+                {
+                  "field_key": "payment_method",
+                  "field_type": "payment_method_selector",
+                  "label": "Mode of Payment",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true
+                  },
+                  "field_config": {
+                    "options_source": "static",
+                    "multiple": false,
+                    "display_format": "cards",
+                    "default_value": "Provider Credit"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": [
+                    {
+                      "option_value": "provider_credit",
+                      "option_label": "Provider Credit",
+                      "display_order": 0,
+                      "is_active": true
+                    }
+                  ]
+                },
+                {
+                  "field_key": "selected_program_id",
+                  "field_type": "hidden",
+                  "label": "Selected Program",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 1,
+                  "validation_rules": {
+                    "type": "text"
+                  },
+                  "field_config": {},
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            }
+          ],
+          "status": "not_started"
+        },
+        {
+          "step_id": "0c174ec5-54cb-4d34-acb7-e4e03cab236f",
+          "step_number": 5,
+          "title": "Harvest Details",
+          "identifier": "harvest_details",
+          "description": null,
+          "is_required": true,
+          "is_active": true,
+          "display_order": 4,
+          "metadata": {
+            "icon": "https://api.iconify.design/mdi/leaf.svg"
+          },
+          "sections": [
+            {
+              "section_id": "1652e242-f747-4be6-8c5d-a015a65362b2",
+              "title": "Harvest Details",
+              "identifier": "harvest_details",
+              "description": null,
+              "icon": "https://api.iconify.design/mdi/leaf.svg",
+              "display_order": 0,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {
+                "tooltip": ""
+              },
+              "fields": [
+                {
+                  "field_key": "selected_harvest",
+                  "field_type": "select",
+                  "label": "Harvest Details",
+                  "placeholder": null,
+                  "helper_text": "Select at least one harvest from your registered harvests",
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "min_selections": 1,
+                    "validation_messages": {
+                      "min_selections": "Please select at least one harvest to continue."
+                    }
+                  },
+                  "data_source": "external_api",
+                  "external_api_config": {
+                    "endpoint": "/api/v1/auth/harvest_details",
+                    "method": "GET",
+                    "response_key": "data",
+                    "item_identifier": "id",
+                    "item_display": "selected_produce",
+                    "display_fields": {
+                      "selected_produce": "selected_produce",
+                      "expected_volume": "expected_volume",
+                      "expected_volume_unit": "expected_volume_unit",
+                      "expected_selling_price_per_unit": "expected_selling_price_per_unit",
+                      "linked_farms": "linked_farms"
+                    }
+                  },
+                  "field_config": {
+                    "display_format": "accordion",
+                    "multiple": false,
+                    "min_selections": 1,
+                    "show_details": true,
+                    "searchable": false,
+                    "collapsible": true,
+                    "default_collapsed": true
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            },
+            {
+              "section_id": "8c759c96-9506-40fe-88a9-6b54224c8819",
+              "title": "Existing Borrowing Information",
+              "identifier": "borrowing_details",
+              "description": null,
+              "icon": "https://api.iconify.design/mdi/bank.svg",
+              "display_order": 1,
+              "is_required": false,
+              "is_active": true,
+              "metadata": {
+                "tooltip": "Outstanding farm loans include any supplier or buyer credit yet to be settled."
+              },
+              "fields": [
+                {
+                  "field_key": "lender",
+                  "field_type": "select",
+                  "label": "Lender",
+                  "placeholder": "Enter lender name",
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {},
+                  "field_config": {
+                    "options_source": "static",
+                    "multiple": false,
+                    "searchable": true,
+                    "allow_custom": true
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": [
+                    {
+                      "option_value": "Bank Of Punjab (BOP)",
+                      "option_label": "Bank Of Punjab (BOP)",
+                      "display_order": 0,
+                      "is_active": true
+                    },
+                    {
+                      "option_value": "Meezan Bank",
+                      "option_label": "Meezan Bank",
+                      "display_order": 1,
+                      "is_active": true
+                    },
+                    {
+                      "option_value": "Askari Bank",
+                      "option_label": "Askari Bank",
+                      "display_order": 2,
+                      "is_active": true
+                    },
+                    {
+                      "option_value": "MCB",
+                      "option_label": "MCB",
+                      "display_order": 3,
+                      "is_active": true
+                    }
+                  ]
+                },
+                {
+                  "field_key": "borrowing_facility_type",
+                  "field_type": "select",
+                  "label": "Facility type",
+                  "placeholder": "Type",
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 1,
+                  "validation_rules": {
+                    "validation_messages": {
+                      "presence": "Please select Facility Type"
+                    }
+                  },
+                  "field_config": {
+                    "options_source": "static",
+                    "multiple": false,
+                    "searchable": false
+                  },
+                  "conditional_logic": {
+                    "required_if": {
+                      "field_key": "lender",
+                      "operator": "present"
+                    }
+                  },
+                  "metadata": {},
+                  "options": [
+                    {
+                      "option_value": "input_credit",
+                      "option_label": "Input Credit",
+                      "display_order": 0,
+                      "is_active": true
+                    },
+                    {
+                      "option_value": "supplier_credit",
+                      "option_label": "Supplier Credit",
+                      "display_order": 1,
+                      "is_active": true
+                    },
+                    {
+                      "option_value": "bank_loan",
+                      "option_label": "Bank Loan",
+                      "display_order": 2,
+                      "is_active": true
+                    },
+                    {
+                      "option_value": "overdraft",
+                      "option_label": "Overdraft",
+                      "display_order": 3,
+                      "is_active": true
+                    }
+                  ]
+                },
+                {
+                  "field_key": "outstanding_amount",
+                  "field_type": "number",
+                  "label": "Existing outstanding",
+                  "placeholder": "0.00",
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 2,
+                  "validation_rules": {
+                    "type": "number",
+                    "min": 0.01,
+                    "precision": 2,
+                    "validation_messages": {
+                      "min": "Existing outstanding must be more than zero."
+                    }
+                  },
+                  "field_config": {
+                    "decimal_places": 2,
+                    "step": 0.01,
+                    "min": 0,
+                    "currency_symbol": "Rs"
+                  },
+                  "conditional_logic": {
+                    "required_if": {
+                      "field_key": "lender",
+                      "operator": "present"
+                    }
+                  },
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            }
+          ],
+          "status": "not_started"
+        },
+        {
+          "step_id": "04c1b6c4-f756-4bdf-bb49-c2cb5a67d0d4",
+          "step_number": 6,
+          "title": "Loan Agreement",
+          "identifier": "loan_agreement",
+          "description": null,
+          "is_required": true,
+          "is_active": true,
+          "display_order": 5,
+          "metadata": {},
+          "sections": [
+            {
+              "section_id": "bfc34166-b3a8-4afd-8458-bcedc50728dd",
+              "title": "",
+              "identifier": "summary_and_pdf",
+              "description": null,
+              "icon": "https://api.iconify.design/mdi/file-pdf-box.svg",
+              "display_order": 0,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {},
+              "fields": [
+                {
+                  "field_key": "loan_breakdown",
+                  "field_type": "display_content",
+                  "label": "Loan Breakdown",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {},
+                  "data_source": "external_api",
+                  "external_api_config": {
+                    "endpoint": "/api/v1/input_provider_key_terms",
+                    "method": "GET",
+                    "response_key": "data",
+                    "query_params": {
+                      "submission_id": "submission_id"
+                    }
+                  },
+                  "field_config": {
+                    "display_format": "text",
+                    "content_type": "key_terms"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "prepayment_model",
+                  "field_type": "display_content",
+                  "label": "Repayment Model",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 1,
+                  "validation_rules": {},
+                  "data_source": "external_api",
+                  "external_api_config": {
+                    "endpoint": "/api/v1/buyers/:buyer_id/agreement_pdf",
+                    "method": "GET",
+                    "response_key": "data"
+                  },
+                  "field_config": {
+                    "display_format": "pdf",
+                    "content_type": "agreement_pdf"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "contigent_charges",
+                  "field_type": "display_content",
+                  "label": "Contingent Charges",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 2,
+                  "validation_rules": {},
+                  "data_source": "external_api",
+                  "external_api_config": {
+                    "endpoint": "/api/v1/buyers/:buyer_id/agreement_pdf",
+                    "method": "GET",
+                    "response_key": "data"
+                  },
+                  "field_config": {
+                    "display_format": "pdf",
+                    "content_type": "agreement_pdf"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "means_of_repayment",
+                  "field_type": "display_content",
+                  "label": "Means of Repayment",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": false,
+                  "is_active": true,
+                  "display_order": 3,
+                  "validation_rules": {},
+                  "data_source": "external_api",
+                  "external_api_config": {
+                    "endpoint": "/api/v1/buyers/:buyer_id/agreement_pdf",
+                    "method": "GET",
+                    "response_key": "data"
+                  },
+                  "field_config": {
+                    "display_format": "pdf",
+                    "content_type": "agreement_pdf"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "agreement_accepted",
+                  "field_type": "checkbox",
+                  "label": "I/We hereby declare that I have read, understood, and agree to the terms and conditions outlined in this loan agreement. By signing and providing OTP-based consent in the next step, I/We confirm acceptance of the agreed terms stated in the loan agreement . I/We also authorize the parties to execute the obligations, settlements, and deductions as applicable under this agreement.",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 4,
+                  "validation_rules": {
+                    "presence": true,
+                    "must_be_true": true,
+                    "type": "boolean"
+                  },
+                  "field_config": {
+                    "default_value": false
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            }
+          ],
+          "status": "not_started"
+        },
+        {
+          "step_id": "61994744-24db-4b44-adbf-4f7a5d412a42",
+          "step_number": 7,
+          "title": "Authentication",
+          "identifier": "authentication",
+          "description": null,
+          "is_required": true,
+          "is_active": true,
+          "display_order": 6,
+          "metadata": {},
+          "sections": [
+            {
+              "section_id": "a8edbf8d-06d0-4566-aa54-13abe16d4502",
+              "title": "Signature and Consent",
+              "identifier": "signature_and_consent",
+              "description": "Please sign within the area and proceed to complete your application.",
+              "icon": "https://api.iconify.design/mdi/pencil.svg",
+              "display_order": 0,
+              "is_required": true,
+              "is_active": true,
+              "metadata": {},
+              "fields": [
+                {
+                  "field_key": "signature_image",
+                  "field_type": "file",
+                  "label": "Signature",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 0,
+                  "validation_rules": {
+                    "presence": true,
+                    "file_types": [
+                      "image/jpeg",
+                      "image/png",
+                      "image/svg+xml"
+                    ],
+                    "max_size_mb": 5
+                  },
+                  "field_config": {
+                    "allowed_types": [
+                      "image/jpeg",
+                      "image/png",
+                      "image/svg+xml"
+                    ],
+                    "max_size_mb": 5,
+                    "multiple": false,
+                    "accept": ".jpg,.jpeg,.png,.svg",
+                    "display_format": "signature_pad"
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                },
+                {
+                  "field_key": "consent_given",
+                  "field_type": "checkbox",
+                  "label": "Your signature confirms that you have read, understood and agree to the terms of the Loan Agreement.",
+                  "placeholder": null,
+                  "helper_text": null,
+                  "is_required": true,
+                  "is_active": true,
+                  "display_order": 1,
+                  "validation_rules": {
+                    "presence": true,
+                    "must_be_true": true,
+                    "type": "boolean"
+                  },
+                  "field_config": {
+                    "default_value": false
+                  },
+                  "conditional_logic": null,
+                  "metadata": {},
+                  "options": []
+                }
+              ]
+            }
+          ],
+          "status": "not_started"
+        }
+      ]
+    }
+  }
