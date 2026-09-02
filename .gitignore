@@ -79,3 +79,4 @@ yarn-error.log
 ios/*.txt
 Podfile.lock
 ios/sentry.properties
+android/sentry.properties
