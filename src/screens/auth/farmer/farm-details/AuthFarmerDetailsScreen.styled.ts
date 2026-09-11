@@ -6,6 +6,12 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 24,
   },
+  contentContainer: {
+    flexGrow: 1,
+  },
+  screenContent: {
+    flex: 1,
+  },
   container: {
     // paddingTop: 24,
     flex: 1,
@@ -40,6 +46,37 @@ export const styles = StyleSheet.create({
   optionText: { marginLeft: 8, fontSize: 15 },
   agreement: { flexDirection: 'row', alignItems: 'center' },
   agreementText: { color: '#404040', fontSize: 15 },
+  privacyPolicyLink: {
+    color: '#16A34A',
+  },
+  errorText: {
+    color: '#D32F2F',
+    marginTop: 4,
+    fontSize: 13,
+  },
+  requiredAsterisk: {
+    color: '#E53935',
+  },
+  formRow: {
+    flexDirection: 'row',
+    gap: 16,
+  },
+  farmSizeWrapper: {
+    flex: 0.4,
+  },
+  farmSizeUnitWrapper: {
+    flex: 0.6,
+  },
+  farmSizeInputWrapper: {
+    paddingBottom: 12,
+  },
+  farmSizeInputContainer: {
+    marginBottom: 0,
+  },
+  farmSizeInput: {
+    fontSize: 14,
+    fontFamily: 'Poppins-Medium',
+  },
   link: { color: 'green', textDecorationLine: 'underline' },
   footer: {
     paddingVertical: 20,
